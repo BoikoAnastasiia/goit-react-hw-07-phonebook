@@ -25,8 +25,8 @@ const fetchContacts = () => async dispatch => {
   }
 };
 
-const addContact = text => dispatch => {
-  const contact = { text, completed: false };
+const addContact = ({ name, number }) => dispatch => {
+  const contact = { name, number };
 
   dispatch(addContactRequest);
 

@@ -2,6 +2,7 @@ import { Component } from 'react';
 import styles from './PhoneBook.module.css';
 import { connect } from 'react-redux';
 import contactsOperations from '../../redux/contacts/contacts-operations';
+import contactsSelectors from '../../redux/contacts/contacts-selectors';
 
 class PhoneBookForm extends Component {
   state = {
@@ -61,7 +62,7 @@ class PhoneBookForm extends Component {
 }
 
 const mapStateToProps = state => ({
-  contacts: state.stateContacts.contacts,
+  contacts: contactsSelectors.getFilter(state),
 });
 
 const mapDispatchToProps = dispatch => ({

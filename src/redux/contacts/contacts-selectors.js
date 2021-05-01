@@ -4,14 +4,15 @@ const getLoading = state => state.contacts.loading;
 
 const getFilter = state => state.contacts.filter;
 
-const getAllContacts = state => state.contacts.items;
+const getAllContacts = state => state.contacts.contacts;
+console.log(getAllContacts);
 
 const getVisibleContacts = createSelector(
   [getAllContacts, getFilter],
   (contacts, filter) => {
     const normalizedFilter = filter.toLowerCase();
-    return contacts.filter(({ text }) =>
-      text.toLowerCase().includes(normalizedFilter),
+    return contacts.filter(({ name }) =>
+      name.toLowerCase().includes(normalizedFilter),
     );
   },
 );

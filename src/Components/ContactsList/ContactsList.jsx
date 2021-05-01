@@ -23,7 +23,7 @@ const ContactsList = ({ contacts, onDelete }) => (
 );
 
 const mapStateToProps = state => ({
-  contacts: contactsSelectors.getVisibleTodos(state),
+  contacts: contactsSelectors.getVisibleContacts(state),
 });
 
 const mapDispatchToProps = dispatch => ({
