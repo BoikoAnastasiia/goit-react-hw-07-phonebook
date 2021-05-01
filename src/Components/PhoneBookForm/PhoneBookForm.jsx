@@ -62,7 +62,7 @@ class PhoneBookForm extends Component {
 }
 
 const mapStateToProps = state => ({
-  contacts: contactsSelectors.getFilter(state),
+  contacts: contactsSelectors.getVisibleContacts(state),
 });
 
 const mapDispatchToProps = dispatch => ({

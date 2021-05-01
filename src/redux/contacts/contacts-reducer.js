@@ -22,7 +22,6 @@ const initialContacts = [
 
 const contacts = createReducer(initialContacts, {
   [fetchContactsSuccess]: (_, { payload }) => payload,
-
   [addContactSuccess]: (state, { payload }) => [...state, payload],
   [deleteContactSuccess]: (state, { payload }) =>
     state.filter(({ id }) => id !== payload),
