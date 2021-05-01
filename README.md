@@ -1,1 +1,1 @@
-Form in React Goit homework
+Selectors in React redux homework
