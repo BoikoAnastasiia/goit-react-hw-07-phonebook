@@ -1,7 +1,8 @@
 import styles from './Search.module.css';
 import { connect } from 'react-redux';
-import contactsActions from '../../redux/contacts/contacts-actions';
 import propTypes from 'prop-types';
+import contactsSelectors from '../../redux/contacts/contacts-selectors';
+import { changeFilter } from '../../redux/contacts/contacts-actions';
 
 const Search = ({ value, onChange }) => (
   <div className={styles.container}>
@@ -23,11 +24,11 @@ Search.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  value: state.stateContacts.filter,
+  value: contactsSelectors.getFilter(state),
 });
 
 const mapDispatchToProps = dispatch => ({
-  onChange: e => dispatch(contactsActions.changeFilter(e.target.value)),
+  onChange: e => dispatch(changeFilter(e.target.value)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Search);

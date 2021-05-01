@@ -42,9 +42,6 @@ const loading = createReducer(false, {
   [deleteContactRequest]: () => true,
   [deleteContactSuccess]: () => false,
   [deleteContactError]: () => false,
-  [toggleCompletedRequest]: () => true,
-  [toggleCompletedSuccess]: () => false,
-  [toggleCompletedError]: () => false,
 });
 
 export default combineReducers({
